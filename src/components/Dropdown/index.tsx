@@ -95,6 +95,8 @@ const DropdownComponent = React.forwardRef<IDropdownRef, DropdownProps<any>>(
       closeModalWhenSelectedItem = true,
       excludeItems = [],
       excludeSearchItems = [],
+      onEndReached,
+      onFooterComponent,
     } = props;
 
     const ref = useRef<View>(null);
@@ -610,6 +612,8 @@ const DropdownComponent = React.forwardRef<IDropdownRef, DropdownProps<any>>(
               renderItem={_renderItem}
               keyExtractor={(_item, index) => index.toString()}
               showsVerticalScrollIndicator={showsVerticalScrollIndicator}
+              onEndReached={onEndReached}
+              ListFooterComponent={onFooterComponent}
             />
           );
         };
@@ -631,6 +635,8 @@ const DropdownComponent = React.forwardRef<IDropdownRef, DropdownProps<any>>(
         listData,
         inverted,
         renderSearch,
+        onEndReached,
+        onFooterComponent,
         scrollIndex,
         showsVerticalScrollIndicator,
         testID,

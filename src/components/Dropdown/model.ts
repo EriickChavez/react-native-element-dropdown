@@ -71,4 +71,10 @@ export interface DropdownProps<T> {
   searchQuery?: (keyword: string, labelValue: string) => boolean;
   onChangeText?: (search: string) => void;
   onConfirmSelectItem?: (item: T) => void;
+  onEndReached?: ((info: { distanceFromEnd: number }) => void) | null;
+  onFooterComponent?:
+    | React.ComponentType<any>
+    | React.ReactElement
+    | null
+    | undefined;
 }
